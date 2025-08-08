@@ -7,5 +7,5 @@ Apart from this each task contains its on readme file, sreenshots of demo and a 
   2. Capture and analyze network traffic using Wireshark.
   3. Exploit a Vulnerability in a Web Application (SQLi)
   4. Write a Detailed Security Assessment Report for a Network
-  5. 
-####The practical task vedio is uploaded on youtube which can be accessed by the links mentioned below.
+
+### The practical task vedio is uploaded on youtube which can be accessed by the links mentioned below.
