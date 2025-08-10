@@ -1,0 +1,99 @@
+Nikto v2.1.6 Vulnerability Scan Results
+========================================
+
+Target Information:
+- Target Hostname: 192.168.29.214
+- Target Port: 80
+- Start Date: 08-08-2025 12:49:00 (GMT-5)
+
+Server Information:
+- Server: Apache/2.2.8 (Ubuntu) DAV/2
+- Retrieved x-powered-by header: PHP/5.2.4 2ubuntu5.10
+
+Security Findings:
+==================
+
+1. Server Version Disclosure
+   - Description: The anti-clickjacking X-Frame-Options header is not present
+   - URL: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
+   - Risk Level: Medium
+   - Impact: Vulnerable to clickjacking attacks
+
+2. Content Type Header Missing
+   - Description: The X-Content-Type-Options header is not set
+   - URL: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/
+   - Risk Level: Low
+   - Impact: MIME type sniffing attacks possible
+
+3. SSL/TLS Issues
+   - Description: Uncommon header 'tcn' found, with contents: Fallback alternatives for 'index' were found
+   - Risk Level: Low
+
+4. Apache Version Information
+   - Description: Apache/2.2.8 appears to be outdated (current is at least Apache/2.4.56)
+   - Risk Level: High
+   - Impact: Known vulnerabilities may exist in outdated version
+
+5. PHP Version Disclosure
+   - Description: Retrieved x-powered-by header reveals PHP/5.2.4
+   - Risk Level: Medium
+   - Impact: PHP version is extremely outdated and contains known vulnerabilities
+
+6. Directory Indexing
+   - Description: /phpinfo.php: Output from the phpinfo() function was found
+   - Risk Level: Critical
+   - Impact: Sensitive server information disclosure
+
+7. HTTP Methods
+   - Description: /phpMyAdmin/ HTTP allowed methods
+   - Risk Level: Medium
+   - Impact: Potential unauthorized access to database administration
+
+8. Default Files Found
+   - Description: /test/: Directory indexing found
+   - Risk Level: Low
+   - Impact: Information disclosure
+
+9. Backup Files
+   - Description: /phpmyadmin/changelog.php: phpMyAdmin is for managing MySQL databases
+   - Risk Level: Medium
+
+10. Server Status Pages
+    - Description: /server-status (mod_status) is found. This gives a lot of system information
+    - Risk Level: High
+    - Impact: Sensitive system information disclosure
+
+11. Server Information Pages
+    - Description: /server-info (mod_info) is found. This gives a lot of system information
+    - Risk Level: High
+
+12. Apache Modules
+    - Description: /phpmyadmin/Documentation.html: phpMyAdmin is for managing MySQL databases
+    - Risk Level: Medium
+
+13. Default Installation Files
+    - Description: Multiple default Apache and phpMyAdmin files found
+    - Risk Level: Medium to High
+
+Summary:
+========
+Total Vulnerabilities Found: 13+
+Critical: 1
+High: 3
+Medium: 6
+Low: 3+
+
+Most Critical Issues:
+1. phpinfo.php file accessible - immediate removal required
+2. Outdated Apache and PHP versions with known vulnerabilities
+3. Server status and info pages accessible
+4. Missing security headers (X-Frame-Options, X-Content-Type-Options)
+
+Recommendations:
+1. Remove phpinfo.php file immediately
+2. Update Apache and PHP to latest versions
+3. Disable server-status and server-info modules
+4. Implement security headers
+5. Remove or secure phpMyAdmin installation
+6. Disable directory indexing
+7. Remove default test files and directories
