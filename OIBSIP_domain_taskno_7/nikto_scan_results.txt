@@ -4,7 +4,6 @@ Nikto v2.1.6 Vulnerability Scan Results
 Target Information:
 - Target Hostname: 192.168.29.214
 - Target Port: 80
-- Start Date: 08-08-2025 12:49:00 (GMT-5)
 
 Server Information:
 - Server: Apache/2.2.8 (Ubuntu) DAV/2
@@ -75,6 +74,8 @@ Security Findings:
     - Description: Multiple default Apache and phpMyAdmin files found
     - Risk Level: Medium to High
 
+---
+
 Summary:
 ========
 Total Vulnerabilities Found: 13+
@@ -97,3 +98,5 @@ Recommendations:
 5. Remove or secure phpMyAdmin installation
 6. Disable directory indexing
 7. Remove default test files and directories
+
+---
