@@ -1,14 +1,8 @@
 # Wireshark Capture & Analysis
 
-This repository contains a network capture and screenshots for analysis. Below are simple steps to install Wireshark on Windows, capture traffic, filter HTTP/HTTPS, and a concise analysis of the provided capture.
-
-## Checklist
-
-- [x] Install Wireshark (steps below)
-- [x] Capture local network traffic (how-to below)
-- [x] Filter HTTP traffic and analyze packets (results below; no plaintext HTTP observed, HTTPS/QUIC analyzed instead)
-- [ ] Deliver wireshark_capture.pcap (see conversion steps from the provided .pcapng)
-- [x] README.md explaining the captured packets (this file)
+This repository contains a network capture and screenshots for analysis.
+Before going forward make sure to have wireshark installed as we are going to use it for the scanning purpose.
+If you don't then, you can follow the steps to install it.
 
 ---
 
@@ -26,6 +20,8 @@ Optional (command line via winget):
 winget install WiresharkFoundation.Wireshark --accept-source-agreements --accept-package-agreements
 ```
 
+---
+
 ## Capture traffic
 
 - Open Wireshark, pick your active interface (Wi‑Fi/Ethernet with packets increasing).
@@ -36,10 +32,7 @@ winget install WiresharkFoundation.Wireshark --accept-source-agreements --accept
 
 - Stop capture and save: File → Save As…
 
-Tips:
-
-- To capture only web traffic while capturing: set capture filter to `tcp port 80 or tcp port 443`.
-- For post‑capture filtering, use display filters (below).
+---
 
 ## Display filters you can use
 
@@ -136,16 +129,9 @@ Below are inline references to the provided images for visual context (open them
 
 ---
 
-## Appendix: quick how‑tos
-
-- Follow a TLS/TCP stream: right‑click a packet → Follow → TCP Stream.
-- Resolve names: View → Name Resolution (or keep off to focus on raw IPs).
-- Export a subset: set a display filter → File → Export Specified Packets…
-
----
-
 ## Deliverables
 
 - `wireshark_capture.pcapng` (provided)
 - `README.md` (this file)
 - To produce `wireshark_capture.pcap`, use the conversion steps above and commit the resulting file next to this README.
+
